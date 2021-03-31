@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const ListContainer = styled.div`
     margin-top: 20px;
-`;
+`
 
 export const PostsList = ({ posts }) => {
     return (

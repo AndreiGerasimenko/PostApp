@@ -18,28 +18,28 @@ const ListContainer = styled.div`
         background-color: lightblue;
         cursor: pointer;
     }
-`;
+`
 
 const PostTitle = styled.div`
     font-size: 1.5rem;
-`;
+`
 
 export const PostListItem = ({ post }) => {
     const history = useHistory()
     const dispatch = useDispatch()
 
     const handlePostClick = () => {
-        history.push(`/post/${post.id}`);
+        history.push(`/post/${post.id}`)
     }
 
     const handleEditCleck = (e) => {
-        e.stopPropagation();
-        history.push(`/edit/${post.id}`);
+        e.stopPropagation()
+        history.push(`/edit/${post.id}`)
     }
 
     const handleDelete = (e) => {
-        e.stopPropagation();
-        dispatch(deletePost(post.id));
+        e.stopPropagation()
+        dispatch(deletePost(post.id))
     }
 
     return (
@@ -48,7 +48,7 @@ export const PostListItem = ({ post }) => {
                 { post.title }
             </PostTitle>
             <div className='icons-container'>
-                <Space size="small">
+                <Space size='small'>
                     <EditOutlined 
                         style={{ fontSize: '1.5rem' }} 
                         onClick={handleEditCleck} />

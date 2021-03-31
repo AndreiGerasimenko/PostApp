@@ -15,15 +15,15 @@ export const CreatePostPage = () => {
         bind: titleBind,
         value: titleValue, 
         setValue: setTitle
-    } = useInput(post?.title || '');
+    } = useInput(post?.title || '')
 
     const { 
         bind: bodyBind, 
         value: bodyValue, 
         setValue: setBody 
-    } = useInput(post?.body || '');
+    } = useInput(post?.body || '')
 
-    const { loading, request, error, clearError } = useHttp();
+    const { loading, request, error, clearError } = useHttp()
 
     const createPostHandler = async () => {
         try{
@@ -44,10 +44,10 @@ export const CreatePostPage = () => {
                 message: 'The Post has been saved'
             })
 
-            setBody('');
-            setTitle('');
+            setBody('')
+            setTitle('')
         } catch(e) {
-            console.log("Error", e);
+            console.log('Error', e)
         }
     }
 
@@ -70,7 +70,7 @@ export const CreatePostPage = () => {
                 message: 'The Post has been saved'
             })
         } catch(e) {
-            console.log("Error", e);
+            console.log('Error', e)
         }
     }
 
@@ -93,13 +93,13 @@ export const CreatePostPage = () => {
             </Typography.Title>
             <Input 
                 {...titleBind }
-                placeholder="Post Title"
-                style={{fontSize: "1.5rem"}}
+                placeholder='Post Title'
+                style={{fontSize: '1.5rem'}}
             />
             <Input.TextArea 
                 {...bodyBind }
-                placeholder="Post content"
-                style={{fontSize: "1.2rem", margin: '1rem 0'}}
+                placeholder='Post content'
+                style={{fontSize: '1.2rem', margin: '1rem 0'}}
                 autoSize={{ minRows: 11 }}
             />
 

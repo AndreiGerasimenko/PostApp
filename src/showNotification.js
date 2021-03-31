@@ -1,13 +1,13 @@
 import { notification } from 'antd'
 
-export const showNotification = ({ message, description, type = "info" }) => {
+export const showNotification = ({ message, description, type = 'info' }) => {
     notification[type]({
         message,
         description,
-        placement: "bottomRight",
+        placement: 'bottomRight',
         style: {
             backgroundColor: 'lightblue',
-            borderRadius: "10px"
+            borderRadius: '10px'
         }
     })
 }

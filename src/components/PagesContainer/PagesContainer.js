@@ -5,4 +5,4 @@ export const PagesContainer = styled.div`
     max-width: 97%;
     margin: 10px auto;
     padding-bottom: 20px;
-`;
+`

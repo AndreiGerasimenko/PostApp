@@ -11,12 +11,12 @@ const CommentWrapper = styled.div`
     margin: 10px auto;
     font-size: 1rem;
     padding: 10px 20px;
-`;
+`
 
 const NoCommentsBlock = styled.div`
     font-style: italic;
     text-align: center;
-`;
+`
 
 export const CommentsContainer = ({ comments }) => {
     const dispatch = useDispatch()
@@ -34,13 +34,13 @@ export const CommentsContainer = ({ comments }) => {
             <Input.TextArea 
                 {...bind}
                 autoSize={{ minRows: 6}}
-                placeholder="Leave your comment"
+                placeholder='Leave your comment'
                 style={{fontSize: '1rem'}}
             />
             <Button 
-                type="primary"
+                type='primary'
                 disabled={!value}
-                style={{ margin: "10px 0"}}
+                style={{ margin: '10px 0'}}
                 onClick={onSendHandler}
             >
                 Send

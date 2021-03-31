@@ -9,8 +9,8 @@ import { PostsList } from '../components/PostsList/PostsList'
 
 export const MainPage = () => {
 
-    const { posts, loading } = useSelector(state => state);
-    const dispatch = useDispatch();
+    const { posts, loading } = useSelector(state => state)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchPosts())
@@ -23,7 +23,7 @@ export const MainPage = () => {
                 List of Posts
             </Typography.Title>
 
-            <Link to="/create-post">
+            <Link to='/create-post'>
                 <Button type='primary' size='large'>Create a POST</Button> 
             </Link>
 

@@ -37,7 +37,7 @@ export const pushComment = (comment) => {
 
 export const fetchPosts = () => {
     return async dispatch => {
-        dispatch(setLoading(true));
+        dispatch(setLoading(true))
         try {
             const response = await fetch(
                 'https://bloggy-api.herokuapp.com/posts',
@@ -47,19 +47,19 @@ export const fetchPosts = () => {
                         'Content-Type': 'application/json'
                     } 
                 }
-            );
+            )
 
-            const data = await response.json();
+            const data = await response.json()
     
             if (!response.ok) {
-              throw new Error("Something went wrong");
+              throw new Error('Something went wrong')
             }
     
-            dispatch(setLoading(false));
+            dispatch(setLoading(false))
     
-            dispatch(setPosts(data));
+            dispatch(setPosts(data))
           } catch (e) {
-            dispatch(setLoading(false));
+            dispatch(setLoading(false))
 
             showNotification({
                 type: 'error',
@@ -83,19 +83,19 @@ export const fetchPostById = (id) => {
                         'Content-Type': 'application/json'
                     } 
                 }
-            );
+            )
 
             const data = await response.json();
     
             if (!response.ok) {
-              throw new Error("Something went wrong");
+              throw new Error('Something went wrong')
             }
     
-            dispatch(setLoading(false));
+            dispatch(setLoading(false))
     
-            dispatch(setChosenPost(data));
+            dispatch(setChosenPost(data))
           } catch (e) {
-            dispatch(setLoading(false));
+            dispatch(setLoading(false))
 
             showNotification({
                 type: 'error',
@@ -119,18 +119,18 @@ export const addComment = (postId, comment) => {
                         'Content-Type': 'application/json'
                     } 
                 }
-            );
+            )
 
             const data = await response.json();
     
             if (!response.ok) {
-              throw new Error("Something went wrong");
+              throw new Error('Something went wrong')
             }
     
-            dispatch(pushComment(data));
+            dispatch(pushComment(data))
 
           } catch (e) {
-              console.log("Error", e);
+              console.log('Error', e)
 
             showNotification({
                 type: 'error',
@@ -153,21 +153,21 @@ export const deletePost = (id) => {
                         'Content-Type': 'application/json'
                     } 
                 }
-            );
+            )
 
-            await response.json();
+            await response.json()
     
             if (!response.ok) {
-              throw new Error("Something went wrong");
+              throw new Error('Something went wrong')
             }
     
             dispatch({
                 type: DELETE_POST,
                 payload: id
-            });
+            })
 
           } catch (e) {
-              console.log("Error", e);
+              console.log('Error', e)
 
             showNotification({
                 type: 'error',

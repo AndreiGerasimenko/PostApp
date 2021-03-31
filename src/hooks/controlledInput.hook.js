@@ -1,15 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react'
 
 export const useInput = (initValue = '') => {
     const [value, setValue] = useState(initValue);
 
     const resetInput = useCallback(() => {
-        setValue('');
-    }, [setValue]);
+        setValue('')
+    }, [setValue])
 
     const onChange = useCallback((event) => {
         setValue(event.currentTarget.value);
-    }, [setValue]);
+    }, [setValue])
 
     return {
         resetInput,

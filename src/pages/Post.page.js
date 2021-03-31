@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { fetchPostById, setChosenPost } from '../redux/actions'
 import { Typography, Empty } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { Loader } from '../components/Loader/Loader';
+import { Loader } from '../components/Loader/Loader'
 import { CommentsContainer } from '../components/CommentContainer/CommentsContainer'
 import { BackIcon } from '../components/BackIcon/BackIcon'
 import styled from 'styled-components'
@@ -15,7 +15,7 @@ const PostsBodyContainer = styled.div`
     min-height: 60vh;
     font-size: 1.2rem;
     padding: 10px 10px;
-`;
+`
 
 export const PostPage = () => {
     const { id } = useParams()

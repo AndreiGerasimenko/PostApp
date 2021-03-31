@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom'
 import { CreatePostPage, MainPage, PostPage } from './pages'
 
-import './App.css';
+import './App.css'
 
 function App() {
   return (
@@ -34,7 +34,6 @@ function App() {
           </Route>
           <Route path='/edit/:id' exact>
             <PagesContainer>
-              {/* <EditPost /> */}
               <CreatePostPage />
             </PagesContainer>
           </Route>
@@ -42,7 +41,7 @@ function App() {
         </Switch>
       </Router>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App
