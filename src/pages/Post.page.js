@@ -6,6 +6,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Loader } from '../components/Loader/Loader';
 import { CommentsContainer } from '../components/CommentContainer/CommentsContainer'
 import { BackIcon } from '../components/BackIcon/BackIcon'
+import styled from 'styled-components'
+
+const PostsBodyContainer = styled.div`
+    border: 1px solid black;
+    max-width: 95%;
+    margin: 0 auto;
+    min-height: 60vh;
+    font-size: 1.2rem;
+    padding: 10px 10px;
+`;
 
 export const PostPage = () => {
     const { id } = useParams()
@@ -30,11 +40,11 @@ export const PostPage = () => {
                             <Typography.Title level={2}>
                                 { chosenPost?.title }
                             </Typography.Title>
-                            <div style={{ border: '1px solid black', maxWidth: '95%', margin: '0 auto', minHeight: '60vh', fontSize: '1.2rem'}}>
+                            <PostsBodyContainer>
                                 {
                                     chosenPost?.body
                                 }
-                            </div>
+                            </PostsBodyContainer>
                             <CommentsContainer comments={chosenPost?.comments} />
                         </>
                         :

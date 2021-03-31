@@ -4,7 +4,19 @@ import { Comment } from '../Comment/Comment'
 import { useInput } from '../../hooks/controlledInput.hook'
 import { useDispatch, useSelector } from 'react-redux'
 import { addComment } from '../../redux/actions'
-import './commentsContainer.css'
+import styled from 'styled-components'
+
+const CommentWrapper = styled.div`
+    max-width: 95%;
+    margin: 10px auto;
+    font-size: 1rem;
+    padding: 10px 20px;
+`;
+
+const NoCommentsBlock = styled.div`
+    font-style: italic;
+    text-align: center;
+`;
 
 export const CommentsContainer = ({ comments }) => {
     const dispatch = useDispatch()
@@ -17,7 +29,7 @@ export const CommentsContainer = ({ comments }) => {
     }
 
     return (
-        <div className="comment-wrapper">
+        <CommentWrapper>
             
             <Input.TextArea 
                 {...bind}
@@ -42,8 +54,8 @@ export const CommentsContainer = ({ comments }) => {
                         )
                     })
                 :
-                    <div className="no-comments">There are no comments yet.</div>    
+                    <NoCommentsBlock>There are no comments yet.</NoCommentsBlock>    
             }
-        </div>
+        </CommentWrapper>
     )
 }

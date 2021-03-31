@@ -4,8 +4,25 @@ import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux'
 import { deletePost } from '../../redux/actions'
+import styled from 'styled-components'
 
-import './postListItem.css'
+const ListContainer = styled.div`
+    border: 2px solid lightgrey;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+        background-color: lightblue;
+        cursor: pointer;
+    }
+`;
+
+const PostTitle = styled.div`
+    font-size: 1.5rem;
+`;
 
 export const PostListItem = ({ post }) => {
     const history = useHistory()
@@ -26,16 +43,20 @@ export const PostListItem = ({ post }) => {
     }
 
     return (
-        <div className='listItem-container' onClick={handlePostClick}>
-            <div className="post-title">
+        <ListContainer onClick={handlePostClick}>
+            <PostTitle>
                 { post.title }
-            </div>
+            </PostTitle>
             <div className='icons-container'>
                 <Space size="small">
-                    <EditOutlined className="icon" onClick={handleEditCleck} />
-                    <DeleteOutlined className="icon" onClick={handleDelete}/>
+                    <EditOutlined 
+                        style={{ fontSize: '1.5rem' }} 
+                        onClick={handleEditCleck} />
+                    <DeleteOutlined 
+                        style={{ fontSize: '1.5rem' }} 
+                        onClick={handleDelete}/>
                 </Space>
             </div>
-        </div>
+        </ListContainer>
     )
 }

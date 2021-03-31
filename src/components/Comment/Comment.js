@@ -1,10 +1,17 @@
 import React from 'react'
-import './comment.css'
+import styled from 'styled-components'
+
+const CommentContainer = styled.div`
+    background-color: rgb(171, 234, 248);
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+`;
 
 export const Comment = ({ comment }) => {
     return (
-        <div className='comment-container'>
+        <CommentContainer>
             { comment?.body }
-        </div>
+        </CommentContainer>
     )
 }

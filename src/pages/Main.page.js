@@ -19,7 +19,7 @@ export const MainPage = () => {
 
     return (
         <div>
-            <Typography.Title level={2} className='page-title'>
+            <Typography.Title level={2}>
                 List of Posts
             </Typography.Title>
 

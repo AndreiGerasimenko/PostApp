@@ -1,11 +1,15 @@
 import React from 'react'
 import { PostListItem } from '../PostListItem/PostListItem'
 import { Empty } from 'antd'
-import './postsList.css'
+import styled from 'styled-components'
+
+const ListContainer = styled.div`
+    margin-top: 20px;
+`;
 
 export const PostsList = ({ posts }) => {
     return (
-        <div className='list-container'>
+        <ListContainer>
             {
                 posts?.length ? 
                     posts.map(post => {
@@ -14,6 +18,6 @@ export const PostsList = ({ posts }) => {
                 :
                     <Empty /> 
             }
-        </div>
+        </ListContainer>
     )
 }
