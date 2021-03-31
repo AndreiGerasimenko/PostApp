@@ -1,0 +1,5 @@
+export const SET_LOADING = "SET_LOADING"
+export const SET_POSTS = "SET_POSTS"
+export const SET_CHOSEN_POST = "SET_CHOSEN_POST"
+export const ADD_COMMENT = "ADD_COMMENT"
+export const DELETE_POST = "DELETE_POST"

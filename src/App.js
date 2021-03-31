@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import React from 'react'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+import { PagesContainer } from './components/PagesContainer/PagesContainer'
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom'
+import { CreatePostPage, MainPage, PostPage } from './pages'
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path='/' exact>
+            <PagesContainer>
+              <MainPage />
+            </PagesContainer>
+          </Route>
+          <Route path='/create-post' exact>
+            <PagesContainer>
+              <CreatePostPage />
+            </PagesContainer>
+          </Route>
+          <Route path='/post/:id' exact>
+            <PagesContainer>
+              <PostPage />
+            </PagesContainer>
+          </Route>
+          <Route path='/edit/:id' exact>
+            <PagesContainer>
+              {/* <EditPost /> */}
+              <CreatePostPage />
+            </PagesContainer>
+          </Route>
+          <Redirect to='/' />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
